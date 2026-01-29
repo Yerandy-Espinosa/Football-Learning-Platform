@@ -1,0 +1,46 @@
+.app-layout {
+    min-height: 100vh;
+}
+
+.main-content {
+    min-height: 100vh;
+    padding: var(--spacing-xl);
+    margin-left: var(--sidebar-width);
+    transition: margin-left var(--transition-normal);
+}
+
+/* Player layout has bottom nav on mobile */
+.player-layout .main-content {
+    padding-bottom: var(--spacing-xl);
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .main-content {
+        margin-left: 0;
+        padding: var(--spacing-md);
+        padding-top: calc(var(--header-height) + var(--spacing-md));
+    }
+
+    .player-layout .main-content {
+        padding-bottom: calc(var(--bottom-nav-height) + var(--spacing-md));
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+    .main-content {
+        margin-left: 80px;
+    }
+}
+
+/* Page transitions */
+.page-enter {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.page-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity var(--transition-normal), transform var(--transition-normal);
+}

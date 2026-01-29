@@ -1,0 +1,308 @@
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--color-background);
+    /* Force light background */
+}
+
+.login-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    /* Soft light gradient: Surface hover (very light mint) to Background (mint white) */
+    background: radial-gradient(circle at top right, var(--color-surface-hover) 0%, var(--color-background) 60%);
+}
+
+.field-lines {
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+    /* slightly more visible on light */
+    /* Use Primary color for lines so they appear as faint green on white */
+    background-image: repeating-linear-gradient(90deg, transparent, transparent 10%, var(--color-primary) 10%, var(--color-primary) 10.5%);
+}
+
+.glow-effect {
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+    /* Light Green Glow */
+    filter: blur(80px);
+}
+
+.login-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 4rem;
+    width: 100%;
+    max-width: 1200px;
+    padding: var(--spacing-xl);
+    align-items: center;
+    justify-content: center;
+}
+
+/* Left Panel: Login */
+.login-panel {
+    flex: 1;
+    max-width: 480px;
+}
+
+.login-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.login-logo .logo-icon {
+    font-size: 48px;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.logo-text-group h1 {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: var(--color-chalk);
+    line-height: 1;
+    margin: 0;
+}
+
+.logo-text-group p {
+    font-size: 14px;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.login-card {
+    background: #FFFFFF;
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    /* Soft, premium shadow */
+    border: 1px solid var(--color-border);
+    max-width: 100%;
+}
+
+.login-card h2 {
+    font-size: 24px;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-chalk);
+}
+
+.login-description {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.login-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.login-option {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--color-bg-dark);
+    /* Very light mint */
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.login-option:hover {
+    background: var(--color-surface-hover);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.option-icon {
+    font-size: 28px;
+    background: #FFFFFF;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.option-content h3 {
+    font-size: 18px;
+    margin-bottom: 2px;
+    color: var(--color-text);
+}
+
+.option-content p {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+}
+
+/* Right Panel: Leaderboard */
+.leaderboard-panel {
+    flex: 1;
+    max-width: 500px;
+    height: 600px;
+    /* Fixed height for scrolling */
+}
+
+.leaderboard-container {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-lg);
+    border-radius: 24px;
+}
+
+.leaderboard-header {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--spacing-md);
+}
+
+.leaderboard-header .trophy-icon {
+    font-size: 48px;
+    display: block;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Mobile View Handling */
+.mobile-leaderboard-view {
+    position: fixed;
+    inset: 0;
+    background: var(--color-background);
+    z-index: 20;
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.mobile-leaderboard-content {
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Modal Styling Improvements */
+/* Modal Styling Improvements */
+/* Modal Styling Improvements */
+.player-selector-modal {
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    color: var(--color-text);
+    z-index: var(--z-modal);
+    min-width: 400px;
+    /* Ensure wide enough */
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+}
+
+.modal-header h3 {
+    color: var(--color-text);
+    margin: 0;
+}
+
+.player-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.close-btn-icon {
+    background: none;
+    border: none;
+    color: var(--color-text-secondary);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.player-card {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--color-bg-dark);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    width: 100%;
+    text-align: left;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.player-card:hover {
+    background: var(--color-surface-hover);
+    border-color: var(--color-primary);
+    transform: translateX(4px);
+}
+
+.player-avatar {
+    width: 40px;
+    height: 40px;
+    background: var(--color-primary);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.player-info {
+    flex: 1;
+}
+
+.player-stats-preview {
+    margin-left: auto;
+}
+
+.stat-badge .label {
+    font-size: 10px;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+}
+
+@media (max-width: 1023px) {
+    .login-container {
+        flex-direction: column;
+        padding: var(--spacing-md);
+    }
+
+    .leaderboard-panel {
+        display: none;
+        /* Controlled by state in JS for mobile */
+    }
+
+    .login-panel {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,137 @@
+.leaderboard-list-container {
+    background: var(--color-panel);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.leaderboard-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.leaderboard-tabs {
+    display: flex;
+    gap: var(--spacing-sm);
+    background: rgba(0, 0, 0, 0.2);
+    padding: 4px;
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+}
+
+.leaderboard-tab {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm);
+    border: none;
+    background: transparent;
+    color: var(--color-text-dim);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.leaderboard-tab:hover {
+    color: var(--color-text);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.leaderboard-tab.active {
+    background: var(--color-primary);
+    color: white;
+    box-shadow: var(--shadow-sm);
+}
+
+.leaderboard-entries {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.leaderboard-entry {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-md);
+    transition: transform 0.2s;
+}
+
+.leaderboard-entry:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateX(2px);
+}
+
+.leaderboard-entry.rank-1,
+.leaderboard-entry.rank-2,
+.leaderboard-entry.rank-3 {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rank-badge {
+    min-width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: var(--spacing-md);
+    padding: 0 4px;
+}
+
+.rank-number {
+    color: var(--color-text-dim);
+    font-size: 0.9rem;
+}
+
+.player-info {
+    flex: 1;
+}
+
+.player-name {
+    display: block;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.player-team {
+    font-size: 0.8rem;
+    color: var(--color-text-dim);
+}
+
+.score-value {
+    text-align: right;
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+.unit {
+    font-size: 0.8rem;
+    color: var(--color-text-dim);
+    margin-left: 2px;
+}
+
+.leaderboard-footer {
+    margin-top: var(--spacing-md);
+    text-align: center;
+    color: var(--color-text-dim);
+    font-size: 0.9rem;
+}
+
+/* Compact Mode */
+.leaderboard-list-container.compact .leaderboard-header {
+    margin-bottom: var(--spacing-md);
+}
+
+.leaderboard-list-container.compact .leaderboard-entry {
+    padding: var(--spacing-sm) var(--spacing-md);
+}
