@@ -1,4 +1,4 @@
-import React from 'react';
+// No imports from react needed or import only what is used
 import { LeaderboardList } from '../../components/LeaderboardList';
 import './PlayerPages.css';
 

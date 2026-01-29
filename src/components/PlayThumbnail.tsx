@@ -1,5 +1,4 @@
-import React from 'react';
-import type { Play, PlayPlayer } from '../types';
+import type { Play } from '../types';
 import './PlayThumbnail.css';
 
 interface PlayThumbnailProps {
@@ -8,7 +7,7 @@ interface PlayThumbnailProps {
     showPhase?: boolean;
 }
 
-export const PlayThumbnail: React.FC<PlayThumbnailProps> = ({ play, className = '', showPhase = true }) => {
+export function PlayThumbnail({ play, className = '', showPhase = true }: PlayThumbnailProps) {
     return (
         <div className={`play-thumbnail-container ${className}`}>
             <div className="field-preview">
@@ -59,4 +58,4 @@ export const PlayThumbnail: React.FC<PlayThumbnailProps> = ({ play, className = 
             )}
         </div>
     );
-};
+}

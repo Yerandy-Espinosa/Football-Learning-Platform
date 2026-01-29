@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import type { MouseEvent } from 'react';
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { demoPlays } from '../../data/demoData';
 import type { Play, PlayPlayer } from '../../types';
@@ -50,8 +51,6 @@ export function PlayBuilder() {
     const [selectedPlayer, setSelectedPlayer] = useState<PlayPlayer | null>(null);
     const [showSidebar, setShowSidebar] = useState(true);
     const [zoom, setZoom] = useState(1);
-    const [history, setHistory] = useState<Play[]>([]);
-    const [historyIndex, setHistoryIndex] = useState(-1);
     const canvasRef = useRef<HTMLDivElement>(null);
     const [drawnRoutes, setDrawnRoutes] = useState<{ id: string; points: { x: number; y: number }[]; style: string }[]>([]);
     const [isDrawing, setIsDrawing] = useState(false);
@@ -78,7 +77,7 @@ export function PlayBuilder() {
         }));
     };
 
-    const handleCanvasMouseDown = (e: React.MouseEvent) => {
+    const handleCanvasMouseDown = (e: MouseEvent) => {
         if (isViewOnly) return;
         if (activeTool.startsWith('route-')) {
             const rect = canvasRef.current?.getBoundingClientRect();
@@ -92,7 +91,7 @@ export function PlayBuilder() {
         }
     };
 
-    const handleCanvasMouseMove = (e: React.MouseEvent) => {
+    const handleCanvasMouseMove = (e: MouseEvent) => {
         if (!isDrawing || isViewOnly) return;
 
         const rect = canvasRef.current?.getBoundingClientRect();

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { demoPlays } from '../../data/demoData';
 import { useGame, SCORING } from '../../context/GameContext';
 import './PlayerPages.css';

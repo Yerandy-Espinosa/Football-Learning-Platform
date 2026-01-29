@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { demoPlayers, teamAnalytics, playerAnalytics, leaderboards } from '../../data/demoData';
 import type { Player, LeaderboardType } from '../../types';
 import './DashboardPage.css';
@@ -11,7 +11,9 @@ export function DashboardPage() {
         points: 'Points',
         accuracy: 'Accuracy %',
         performance: 'Performance',
-        mostImproved: 'Most Improved'
+        mostImproved: 'Most Improved',
+        streak: 'Streak',
+        reaction_time: 'Reaction Time'
     };
 
     return (

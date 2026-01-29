@@ -18,7 +18,6 @@ import { PlayerPlaysPage } from './pages/player/PlayerPlaysPage';
 import { PracticeMode } from './pages/player/PracticeMode';
 import { GameReadyMode } from './pages/player/GameReadyMode';
 import { ProgressPage } from './pages/player/ProgressPage';
-import { LeaderboardPage } from './pages/player/LeaderboardPage';
 import { LearnMode } from './pages/player/LearnMode';
 
 import './index.css';
