@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
+import type React from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { demoPlays } from '../../data/demoData';
 import type { Play, PlayPlayer } from '../../types';
@@ -50,8 +51,8 @@ export function PlayBuilder() {
     const [selectedPlayer, setSelectedPlayer] = useState<PlayPlayer | null>(null);
     const [showSidebar, setShowSidebar] = useState(true);
     const [zoom, setZoom] = useState(1);
-    const [history, setHistory] = useState<Play[]>([]);
-    const [historyIndex, setHistoryIndex] = useState(-1);
+    const [_history, _setHistory] = useState<Play[]>([]);
+    const [_historyIndex, _setHistoryIndex] = useState(-1);
     const canvasRef = useRef<HTMLDivElement>(null);
     const [drawnRoutes, setDrawnRoutes] = useState<{ id: string; points: { x: number; y: number }[]; style: string }[]>([]);
     const [isDrawing, setIsDrawing] = useState(false);

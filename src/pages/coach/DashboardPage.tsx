@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { demoPlayers, teamAnalytics, playerAnalytics, leaderboards } from '../../data/demoData';
 import type { Player, LeaderboardType } from '../../types';
 import './DashboardPage.css';
@@ -11,7 +11,9 @@ export function DashboardPage() {
         points: 'Points',
         accuracy: 'Accuracy %',
         performance: 'Performance',
-        mostImproved: 'Most Improved'
+        mostImproved: 'Most Improved',
+        streak: 'Streak',
+        reaction_time: 'Reaction Time'
     };
 
     return (
@@ -137,7 +139,7 @@ export function DashboardPage() {
                                     </span>
                                     {entry.change !== undefined && entry.change !== 0 && (
                                         <span className={`change ${entry.change > 0 ? 'up' : 'down'}`}>
-                                            {entry.change > 0 ? '↑' : '↓'} {Math.abs(entry.change)}
+                                            {entry.change > 0 ? '↑' : '��'} {Math.abs(entry.change)}
                                         </span>
                                     )}
                                 </div>

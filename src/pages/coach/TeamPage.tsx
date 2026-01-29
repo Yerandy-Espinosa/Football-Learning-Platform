@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useGame } from '../../context/GameContext';
 import { demoPlayers } from '../../data/demoData';
 import './TeamPage.css';

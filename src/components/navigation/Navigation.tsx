@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import './Navigation.css';
@@ -169,7 +169,7 @@ export function BottomNav() {
 
 // Mobile Hamburger Menu (Coach)
 export function HamburgerMenu() {
-    const [isOpen, setIsOpen] = React.useState(false);
+    const [isOpen, setIsOpen] = useState(false);
     const { logout } = useAuth();
 
     return (

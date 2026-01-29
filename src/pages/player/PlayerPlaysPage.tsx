@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { demoPlays, playerAnalytics } from '../../data/demoData';
 import { PlayThumbnail } from '../../components/PlayThumbnail';

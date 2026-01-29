@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { demoPlays } from '../../data/demoData';
 import type { Play, PlayPhase } from '../../types';
