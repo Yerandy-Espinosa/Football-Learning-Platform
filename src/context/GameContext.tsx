@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useCallback } from 'react';
 import type { ReactNode } from 'react';
-import type { PlayerStats, Achievement, LeaderboardSettings } from '../types';
+import type { Achievement, LeaderboardSettings } from '../types';
 
 interface GameContextType {
     // Points & Stats

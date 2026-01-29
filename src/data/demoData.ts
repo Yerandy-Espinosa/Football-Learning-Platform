@@ -1,4 +1,4 @@
-import type { Play, Player, DictionaryEntry, TeamAnalytics, PlayerAnalytics, LeaderboardEntry } from '../types/index';
+import type { Play, Player, DictionaryEntry, TeamAnalytics, PlayerAnalytics, LeaderboardEntry, LeaderboardType } from '../types/index';
 
 // Demo Players
 export const demoPlayers: Player[] = [
@@ -375,7 +375,7 @@ export const playerAnalytics: PlayerAnalytics = {
 };
 
 // Leaderboards
-export const leaderboards: Record<string, LeaderboardEntry[]> = {
+export const leaderboards: Record<LeaderboardType, LeaderboardEntry[]> = {
     points: [
         { playerId: 'marcus', playerName: 'Marcus', position: 'QB', value: 2450, rank: 1, change: 0 },
         { playerId: 'devin', playerName: 'Devin', position: 'LB', value: 2180, rank: 2, change: 1 },
