@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { demoPlays, demoQuestions } from '../../data/demoData';
 import { useGame, SCORING } from '../../context/GameContext';

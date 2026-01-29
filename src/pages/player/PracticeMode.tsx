@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import type React from 'react';
 import { demoPlays, demoQuestions } from '../../data/demoData';
 import { useGame, SCORING } from '../../context/GameContext';
 import './PlayerPages.css';

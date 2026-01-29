@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import type { LeaderboardType } from '../types';
 import { leaderboards } from '../data/demoData';
 import './LeaderboardList.css';

@@ -1,5 +1,4 @@
-import React from 'react';
-import type { Play, PlayPlayer } from '../types';
+import type { Play } from '../types';
 import './PlayThumbnail.css';
 
 interface PlayThumbnailProps {
