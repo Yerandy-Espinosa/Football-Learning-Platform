@@ -91,11 +91,11 @@ export function PlaysPage() {
                         onClick={() => handlePlayClick(play)}
                         style={{ animationDelay: `${index * 50}ms` }}
                     >
-                        <div className="play-thumbnail">
-                            <div className="play-thumbnail-content">
-                                <PlayThumbnail play={play} showPhase={false} />
-                            </div>
-                            <span className={`badge badge-${play.status === 'published' ? 'success' : 'warning'}`}>
+                        {/* Enlarged Thumbnail / Image Preview */}
+                        <div className="play-thumbnail-preview" style={{ height: '220px', width: '100%', position: 'relative' }}>
+                            <PlayThumbnail play={play} showPhase={false} />
+
+                            <span className={`badge badge-${play.status === 'published' ? 'success' : 'warning'}`} style={{ position: 'absolute', top: '10px', right: '10px', zIndex: 100 }}>
                                 {play.status}
                             </span>
                         </div>

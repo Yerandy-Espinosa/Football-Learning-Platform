@@ -1,67 +1,86 @@
+/* PlayThumbnail.css */
+
 .play-thumbnail-container {
     width: 100%;
     height: 100%;
     position: relative;
-    background-color: #1a3c34;
-    /* Match field color */
-    border-radius: var(--radius-md);
     overflow: hidden;
+    background: linear-gradient(180deg, #064e3b 0%, #022c22 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+[data-theme="light"] .play-thumbnail-container {
+    background: linear-gradient(180deg, #10b981 0%, #059669 100%);
 }
 
 .field-preview {
     width: 100%;
     height: 100%;
     position: relative;
+    /* Ensure the field texture is always visible */
+    background-image:
+        repeating-linear-gradient(0deg,
+            transparent,
+            transparent 19%,
+            rgba(255, 255, 255, 0.1) 19%,
+            rgba(255, 255, 255, 0.1) 20%);
 }
 
 .field-lines-mini {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image:
-        linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-    background-size: 100% 20%;
-    /* 5 yard lines approx */
+    inset: 0;
     pointer-events: none;
 }
 
 .routes-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
-    pointer-events: none;
+    z-index: 10;
 }
 
 .player-dot {
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    z-index: 2;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    z-index: 20;
 }
 
 .player-dot.offense {
-    background-color: #F2994A;
-    /* Orange for offense looks good on green */
-    border: 1px solid #fff;
+    background: white;
+    border: 2px solid var(--color-primary);
 }
 
 .player-dot.defense {
-    background-color: #EB5757;
-    /* Red for defense */
-    border: 1px solid #fff;
+    background: var(--color-danger);
+    border: 2px solid white;
 }
 
 .play-thumbnail-phase {
     position: absolute;
     top: 8px;
     right: 8px;
-    z-index: 3;
+    z-index: 30;
+}
+
+.phase-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.phase-indicator.offense {
+    background: var(--color-primary);
+    box-shadow: 0 0 5px var(--color-primary);
+}
+
+.phase-indicator.defense {
+    background: var(--color-danger);
+    box-shadow: 0 0 5px var(--color-danger);
 }
